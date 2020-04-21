@@ -235,3 +235,101 @@
 #
 # print(filter_arr)
 # print(newarr)
+
+
+##### NumPy random numbers #####
+
+# from numpy import random
+# x = random.randint(10)   #int
+# print(x)
+#
+#
+# from numpy import random
+# x = random.rand()   #random floaat b/w 0-1
+# print(x)
+
+
+# from numpy import random
+# x = random.randint(10,20, size=(5))    # printing 5 random integers from 10-20
+# print(x)
+
+# from numpy import random
+# x = random.randint(10, 40, size=(2, 5))
+# print(x)
+
+# from numpy import random
+# x = random.rand(3)
+# print(x)
+
+# from numpy import random
+# x = random.rand(3, 5)
+# print(x)
+
+# from numpy import random
+# x = random.choice([1, 2, 3, 4, 5, 6])
+# print(x)
+
+# from numpy import random
+# a = random.randint([2, 4, 6, 8, 10], size = (3,5))
+# print(a)
+
+# ### Data distribution ###
+# from numpy import random
+# x = random.choice([2, 4, 6, 8], size=(3, 5), p=[0.05, 0.1, 0.2, 0.65])
+# print(x)
+
+# ### Random permutation ###
+# from numpy import random
+# import numpy as np
+#
+# x = np.array([1, 2, 3, 4, 5])
+# print(random.shuffle(x))
+# print(x)
+
+# from numpy import random
+# import numpy as np
+#
+# arr = np.array([1, 2, 3, 4, 5])
+#
+# print(random.permutation(arr))
+# print(x)
+
+# from numpy import random
+# import numpy as np
+#
+# arr = np.array([1, 2, 3, 4, 5])
+# print(arr)
+# print(random.permutation(arr))
+
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot([0, 10, -20, 3, 40.848, 50])
+# plt.show()
+#
+
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot(random.normal(size = 10), hist = False)
+# plt.show()
+
+# ### Visualization of Binomial distribution (discrete) ###
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot(random.binomial(n = 20, p = 0.7, size = 1000), hist = True, kde = False)
+# plt.show()
+
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot(random.normal(loc=100, scale=25, size=1000), hist=False, label='normal')
+# sns.distplot(random.binomial(n=100, p=0.5, size=1000), hist=False, label='binomial')
+#
+# plt.show()
+
