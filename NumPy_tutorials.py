@@ -333,3 +333,53 @@
 #
 # plt.show()
 
+# def calculateSquare(n):
+#   return n*n
+#
+# numbers = (1, 2, 3, 4)
+# result = map(calculateSquare, numbers)
+# print(result)
+#
+# # converting map object to set
+# numbersSquare = set(result)
+# print(numbersSquare)
+
+### uniform distribution ###
+#
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot(random.uniform(size=1000), hist = False)
+# plt.show()
+
+### Logistic Distribution ###
+#
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# sns.distplot(random.logistic(loc=3, scale=5, size=(2, 3)), hist = False)
+# plt.show()
+
+# from numpy import random
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.distplot(random.normal(scale=2, size=1000), hist=False, label='normal')
+# sns.distplot(random.logistic(size=1000), hist=False, label='logistic')      ## Difference between normal and logistics ##
+#
+# plt.show()
+
+# from numpy import random
+# x = random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6])   # multinomial distribution #
+# print(x)
+
+# Exponential Distribution #
+
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.distplot(random.exponential(scale = 2, size=1000), hist=False)
+
+plt.show()
