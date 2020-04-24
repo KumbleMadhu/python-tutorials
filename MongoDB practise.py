@@ -96,11 +96,124 @@
 # for v in mycoll.find({}, {"_id": 0, "name": 1, "age": 1}):
 #   print(v)
 
-import pymongo
+# import pymongo
+#
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# for x in mycoll.find({},{"country": 1, "name": 1}):
+#   print(x)
 
-client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
-mydb = client_abc["dbsample"]
-mycoll = mydb["customers"]
+# MongoDB Query(for filtering the result while finding the docs) #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# query = {"country": "Germany"}
+# doc = mycoll.find(query)
+# for i in doc:
+#     print(i)
 
-for x in mycoll.find({},{"country": 1, "name": 1}):
-  print(x)
+# # advanced query #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# query = {"age": {"$gt": "22"}}
+#
+# doc = mycoll.find(query)
+# for i in doc:
+#     print(i)
+
+# # Filter With Regular Expressions #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# query = {"country": {"$regex": "^G"}}
+#
+# doc = mycoll.find(query)
+# for i in doc:
+#     print(i)
+
+# # Sort the result #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# doc = mycoll.find().sort("name")
+# for i in doc:
+#     print(i)
+
+# # Sort descending #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# doc = mycoll.find().sort("name", -1)
+# for i in doc:
+#     print(i)
+
+
+# # Delete doc(one and many) #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# querry = {"location": "India"}
+# x = mycoll.delete_one(querry)
+# print(x)
+#
+# querry = {"location": {"$regex": "^G"}}
+# x = mycoll.delete_many(querry)
+# print(x.deleted_count," documents deleted!")
+
+
+# Deleting all the documents in a collection #
+# import pymongo
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# x =   mycoll.delete_many({})
+# print(x.deleted_count, "docs deleted!")
+
+
+# Deleting a collection(using drop() method) #
+# import pymongo
+#
+# client_abc = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_abc["dbsample"]
+# mycoll = mydb["customers"]
+#
+# mycoll.drop()
+
+# # updating many docs in a collection #
+# import pymongo
+# client_100 = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_100["dbtest"]
+# my_coll = mydb["USprj"]
+#
+# my_query = {"location": {"$regex": "^I"}}
+# new_values = {"$set": {"name": "Krishna"}}
+#
+# x = my_coll.update_many(my_query, new_values)
+# print(x.modified_count, "docs updated!")
+
+
+# # Limiting the result #
+# import pymongo
+# client_100 = pymongo.MongoClient("mongodb+srv://Madhu:myiDB0000@learningmdb-en9um.gcp.mongodb.net/test?retryWrites=true&w=majority")
+# mydb = client_100["dbtest"]
+# my_coll = mydb["USprj"]
+#
+# result = my_coll.find().limit(2)
+# for z in result:
+#     print(z)
